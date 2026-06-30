@@ -80,6 +80,7 @@ strong { font-weight: 600; }
 <li><strong>Stored locally on your device:</strong> the authentication tokens for this anonymous account, in the iOS <strong>Keychain</strong>.</li>
 </ul>
 <p><strong>On macOS</strong> there are no accounts; the free-tier limit is a simple <strong>local counter</strong> on your Mac (see Section 7).</p>
+<p><strong>Legal basis (GDPR).</strong> Processing your image in a cloud tool, and running the anonymous account and credit system that let you use it, is <strong>performance of a contract</strong> with you (Art. 6(1)(b)) — it's the service you asked for. Managing purchases is likewise contract performance and <strong>legal obligation</strong> (Art. 6(1)(c)) for tax/records. The analytics in Section 6 rely on <strong>legitimate interests</strong> (Art. 6(1)(f)).</p>
 <hr>
 <h2 id="5-purchases-apple-and-apphud">5. Purchases (Apple and Apphud)</h2>
 <p>If you buy a subscription (Monthly or Annual) or the one-time "Lifetime" purchase, <strong>Apple</strong> processes the transaction through the App Store. To manage purchases, validate receipts, restore them, and apply the right entitlement (free vs. paid), Snip uses <strong>Apphud, Inc.</strong> for subscription management on <strong>both platforms</strong>.</p>
@@ -90,7 +91,7 @@ strong { font-weight: 600; }
 <p>Snip's analytics is <strong>on for everyone</strong> and helps me see how features are used and keep the app stable. It describes <em>how the app is used</em>, not <em>what you process with it</em>: your images, screenshots, and recognized text are never included.</p>
 <ul>
 <li><strong>On both platforms — Amplitude, Inc. (US):</strong> product analytics — usage events (which tools and features you use, sessions, feature flows), diagnostic and error events, app version, OS version, device model, and a <strong>device-scoped identifier</strong> (IDFV / an app-instance ID) used to count distinct devices and group events from the same device.</li>
-<li><strong>On macOS only — Google Firebase Analytics (Google LLC, US):</strong> usage analytics of the same kind. Firebase also typically receives your <strong>IP address</strong>. Firebase is <strong>not active on iOS</strong>.</li>
+<li><strong>On macOS — Google Firebase Analytics (Google LLC, US):</strong> the macOS app includes the Firebase Analytics SDK as a secondary analytics destination. When Firebase is active it receives usage analytics of the same kind as above and typically also your <strong>IP address</strong> (which Google may receive in transit). Firebase is <strong>not active on iOS</strong>.</li>
 </ul>
 <p>The device-scoped identifier is not your name or email, is not an advertising ID, and is <strong>not linked to your identity</strong>. There is <strong>no IDFA, no App Tracking Transparency prompt, no cross-app tracking, no data brokers, and no advertising use</strong>. There is no crash-reporting SDK and no push notifications.</p>
 <p><strong>Legal basis (GDPR).</strong> I rely on my <strong>legitimate interests</strong> under Art. 6(1)(f) — improving and stabilizing the app — which I consider proportionate because the data is device-scoped, contains no image content, and is not used for advertising or profiling.</p>
@@ -131,7 +132,7 @@ strong { font-weight: 600; }
 <tr>
 <td><strong>Google LLC — Firebase Analytics</strong> (US)</td>
 <td>macOS only</td>
-<td>Usage analytics</td>
+<td>Usage analytics (SDK present; see Section 6 note on whether active)</td>
 <td>Usage and diagnostic events, app/device info, app-instance identifier, IP address</td>
 </tr>
 <tr>
@@ -179,7 +180,7 @@ strong { font-weight: 600; }
 <hr>
 <h2 id="11-your-rights">11. Your Rights</h2>
 <p><strong>GDPR / UK GDPR.</strong> You can request <strong>access, rectification, erasure, restriction, objection</strong> (including to the analytics covered by Section 6), and <strong>data portability</strong>, and you can <strong>lodge a complaint with your local data protection authority (supervisory authority)</strong>. Email <strong>snipfeedback@gmail.com</strong>. Because there's no login and the analytics is not tied to your identity, I may be unable to locate your specific data without more information from you — on iOS, the anonymous user ID or IDFV can help me find your credit/account records. Some requests may need to go to Apple, Apphud, Amplitude, Google, Supabase, or Replicate — I'll help where I can.</p>
-<p><strong>California (CCPA/CPRA) and other US states.</strong> I do <strong>not</strong> sell or "share" personal information and have not done so in the past 12 months; analytics is first-party and not used for advertising. Categories that may be collected: <strong>identifiers</strong> (device-scoped ID, anonymous user ID), <strong>commercial information</strong> (purchase records), and <strong>internet/network activity</strong> (usage and diagnostic events). You have the right to <strong>know, delete, correct</strong>, and to be <strong>free from discrimination</strong> for exercising these rights. Contact <strong>snipfeedback@gmail.com</strong>. Because I don't sell, share, profile, or do targeted advertising, the related opt-outs under state laws don't apply to my processing.</p>
+<p><strong>California (CCPA/CPRA) and other US states.</strong> I do <strong>not</strong> sell or "share" personal information and have not done so in the past 12 months; analytics is first-party and not used for advertising. Categories that may be collected: <strong>identifiers</strong> (device-scoped ID, anonymous user ID), <strong>commercial information</strong> (purchase records), and <strong>internet/network activity</strong> (usage and diagnostic events). On iOS, the <strong>visual content</strong> of an image you submit to a cloud tool is transiently processed to produce your result and is not stored, sold, or shared. You have the right to <strong>know, delete, correct</strong>, and to be <strong>free from discrimination</strong> for exercising these rights. Contact <strong>snipfeedback@gmail.com</strong>. Because I don't sell, share, profile, or do targeted advertising, the related opt-outs under state laws don't apply to my processing.</p>
 <hr>
 <h2 id="12-security">12. Security</h2>
 <p><strong>On macOS,</strong> your images never leave your Mac, so the main protection for them is the security of your own device. <strong>On iOS,</strong> images sent to the cloud tools travel over <strong>HTTPS (encrypted in transit)</strong> and are discarded after processing rather than stored; the anonymous account's auth tokens are held in the iOS Keychain. For purchase data I rely on Apple's and Apphud's safeguards. No system is perfectly secure, but Snip's design — on-device on macOS, and transient, no-name uploads on iOS — keeps the data exposed to a minimum.</p>
